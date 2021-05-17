@@ -1,0 +1,21 @@
+﻿<Window x:Class="ListBoxRename.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="List Box Rename" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ListBox Grid.Row="0" ItemsSource="{Binding Items}" SelectedItem="{Binding Selected}"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Button Content="Rename" Command="{Binding RenameCommand}"/>
+            <Button Content="Unrename" Command="{Binding UnrenameCommand}"/>
+            <Button Content="List" Command="{Binding ListCommand}"/>
+            <TextBlock Text="{Binding Selected}"/>
+        </StackPanel>
+    </Grid>
+</Window>
